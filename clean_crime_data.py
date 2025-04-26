@@ -32,11 +32,11 @@ for col in numeric_cols:
     if col in df.columns:
         df[col] = pd.to_numeric(df[col], errors='coerce')
 
-# Optional: Remove rows with missing essential fields
+# Remove rows with missing essential fields
 essential_cols = ['Crm Cd', 'Crm Cd Desc', 'DATE OCC']
 df = df.dropna(subset=essential_cols)
 
-# Optional: Keep only Part 1 and Part 2 crimes
+# Keep only Part 1 and Part 2 crimes
 df = df[df['Part 1-2'].isin([1, 2])]
 
 cleaned_file_path = "Crime_Data_Cleaned.csv"
