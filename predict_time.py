@@ -27,7 +27,7 @@ def categorize_time(hour):
 df['Time Category'] = df['Hour'].apply(categorize_time)
 
 # Prepare features and target
-features = df[['AREA NAME', 'Crm Cd Desc']].copy()   # <-- copy() added
+features = df[['AREA NAME', 'Crm Cd Desc']].copy() 
 target = df['Time Category']
 
 # Encode categorical features
